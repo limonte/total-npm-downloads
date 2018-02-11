@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates);
+
+html, body {
+  background-color: #34495e;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 15rem;
+}
+
+form {
+  display: flex;
+  max-width: 95%;
+  margin: 0 auto 5rem;
+  flex-direction: row;
+  box-shadow:
+   1px 1px 0 rgb(22, 160, 133),
+   2px 2px 0 rgb(22, 160, 133),
+   3px 3px 0 rgb(22, 160, 133),
+   4px 4px 0 rgb(22, 160, 133),
+   5px 5px 0 rgb(22, 160, 133),
+   6px 6px 0 rgb(22, 160, 133),
+   7px 7px 0 rgb(22, 160, 133)
+  ;
+}
+
+form > * {
+  font: 1.2rem 'Montserrat Alternates';
+}
+
+form > input {
+  flex: 1;
+  padding: .6rem;
+  border: .2rem solid rgb(26, 188, 156);
+}
+
+form > button {
+  padding: .6rem .8rem;
+  background-color: rgb(26, 188, 156);
+  color: white;
+  border: none;
+}
+
+#result,
+#no-results {
+  font: 2rem 'Montserrat Alternates';
+  color: white;
+  text-align: center;
+}
+
+#result a,
+#no-results strong {
+  color: white;
+  margin: 0 .3rem;
+}
+
+#spinner {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 100%;
+  animation: spinner 1.0s infinite ease-in-out;
+}
+
+@keyframes spinner {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
