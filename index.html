@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Total npm downloads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <form v-on:submit.prevent="submit">
+      <input
+        v-model="inputValue"
+        placeholder="Search by package name..."
+        autofocus>
+      <button type="submit">Get total downloads</button>
+    </form>
+
+    <div id="result" v-if="showResult">
+      <a v-bind:href="npmjs">{{ packageName }}</a>
+      was downloaded
+      <a id="total-downloads" v-bind:href="npmstats">{{ totalDownloads.toLocaleString() }}</a> times.
+    </div>
+
+    <div id="no-results" v-if="showNoResults">
+      Package <strong>{{ packageName }}</strong> is not found.
+    </div>
+
+    <div v-if="pending">
+      <span id="spinner"></span>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
