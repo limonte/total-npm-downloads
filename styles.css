@@ -4,7 +4,6 @@ html, body {
   background-color: #34495e;
   height: 100%;
   display: flex;
-  align-items: center;
   flex-grow: 1;
 }
 
@@ -12,7 +11,7 @@ html, body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 15rem;
+  margin-top: 20vh;
 }
 
 form {
@@ -32,13 +31,14 @@ form {
 }
 
 form > * {
-  font: 1.2rem 'Montserrat Alternates';
+  font: 1.1rem 'Montserrat Alternates';
 }
 
 form > input {
-  flex: 1;
+  width: 17rem;
   padding: .6rem;
   border: .2rem solid rgb(26, 188, 156);
+  box-sizing: border-box;
 }
 
 form > button {
@@ -53,6 +53,7 @@ form > button {
   font: 2rem 'Montserrat Alternates';
   color: white;
   text-align: center;
+  margin: 0 1rem;
 }
 
 #result a,
@@ -78,5 +79,30 @@ form > button {
   100% {
     transform: scale(1.0);
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    flex-direction: column;
+  }
+
+  form > input {
+    text-align: center;
+  }
+
+  #result,
+  #no-results {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  #app {
+    margin-top: 10vh;
+  }
+
+  form {
+    margin-bottom: 2rem;
   }
 }
